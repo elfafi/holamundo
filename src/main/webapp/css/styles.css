@@ -1,23 +1,23 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Style Constants */
 :root {
-    --bg-main: #f9f8f6;
+    --bg-main: #f5f5f5; /* Clean light gray */
     --bg-panel: #ffffff;
-    --border-color: #e5e3df;
+    --border-color: #e5e5e5;
     
-    --text-primary: #1a1a1a;
-    --text-secondary: #706f6c;
-    --text-muted: #a3a19d;
+    --text-primary: #111111; /* Nike deep black */
+    --text-secondary: #555555;
+    --text-muted: #8d8d8d;
     
-    --color-accent: #1a1a1a;
-    --color-accent-hover: #404040;
-    --color-danger: #d946ef; /* Soft violet/pink instead of bright red */
-    --color-danger-dark: #701a75;
-    --color-success: #14b8a6;
+    --color-accent: #111111; /* Pitch black accent */
+    --color-accent-hover: #333333;
+    --color-danger: #e21a22; /* High-visibility Nike orange/red */
+    --color-danger-dark: #b91c1c;
+    --color-success: #10b981;
     
-    --font-serif: 'Cormorant Garamond', serif;
+    --font-serif: 'Montserrat', sans-serif; /* Bold, athletic sans-serif */
     --font-sans: 'Inter', sans-serif;
 }
 
@@ -61,7 +61,7 @@ body {
 .split-image-panel {
     flex: 1.2;
     position: relative;
-    background-color: #1a1a1a;
+    background-color: #111111;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,7 +76,7 @@ body {
     background-image: url('images/fashion_bg.png'); /* Relative to webapp location */
     background-size: cover;
     background-position: center;
-    opacity: 0.8;
+    opacity: 0.75;
 }
 
 .split-image-overlay {
@@ -85,7 +85,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(26,26,26,0.5) 0%, rgba(26,26,26,0.8) 100%);
+    background: linear-gradient(135deg, rgba(17,17,17,0.4) 0%, rgba(17,17,17,0.75) 100%);
     z-index: 1;
 }
 
@@ -97,24 +97,33 @@ body {
     max-width: 500px;
 }
 
+.brand-logo-svg {
+    width: 90px;
+    height: auto;
+    color: #ffffff;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
 .brand-title {
     font-family: var(--font-serif);
-    font-size: 5rem;
-    font-weight: 300;
+    font-size: 3.5rem;
+    font-weight: 900; /* Extra bold for Nike look */
     color: #ffffff;
-    letter-spacing: 12px;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    line-height: 1;
+    margin-bottom: 12px;
 }
 
 .brand-subtitle {
     font-family: var(--font-sans);
     font-size: 11px;
-    font-weight: 500;
-    color: #dfddd9;
+    font-weight: 700;
+    color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
+    opacity: 0.9;
 }
 
 /* Right Form Panel */
@@ -142,12 +151,23 @@ body {
     margin-bottom: 40px;
 }
 
+.form-logo-container {
+    margin-bottom: 24px;
+    color: #111111;
+}
+
+.form-logo-svg {
+    width: 50px;
+    height: auto;
+}
+
 .form-title {
     font-family: var(--font-serif);
-    font-size: 2.2rem;
-    font-weight: 400;
+    font-size: 1.8rem;
+    font-weight: 800; /* Nike athletic feel */
     margin-bottom: 8px;
     letter-spacing: -0.5px;
+    text-transform: uppercase;
 }
 
 .form-subtitle {
@@ -163,7 +183,7 @@ body {
 .form-label {
     display: block;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 8px;
     text-transform: uppercase;
@@ -178,12 +198,12 @@ body {
     width: 100%;
     background-color: #ffffff;
     border: 1px solid var(--border-color);
-    border-radius: 0; /* Minimalist sharp corners */
-    padding: 14px 16px 14px 16px;
+    border-radius: 0; /* Pure athletic minimalist sharp corners */
+    padding: 14px 16px;
     color: var(--text-primary);
     font-family: var(--font-sans);
     font-size: 14px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.2s ease;
     outline: none;
 }
 
@@ -196,7 +216,7 @@ body {
 }
 
 .form-input:disabled {
-    background-color: #f5f5f3;
+    background-color: #f5f5f5;
     color: var(--text-muted);
     cursor: not-allowed;
 }
@@ -206,16 +226,16 @@ body {
     width: 100%;
     background-color: var(--color-accent);
     color: #ffffff;
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 800; /* Extra bold */
     text-transform: uppercase;
     letter-spacing: 2px;
     border: none;
-    border-radius: 0; /* Sharp corners */
+    border-radius: 0;
     padding: 16px 24px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,14 +248,14 @@ body {
 }
 
 .btn:disabled {
-    background-color: #e5e3df;
+    background-color: #e5e5e5;
     color: var(--text-muted);
     cursor: not-allowed;
 }
 
 /* Minimal Alert Notification */
 .alert {
-    border-left: 2px solid;
+    border-left: 3px solid;
     padding: 14px 16px;
     font-size: 13px;
     margin-bottom: 30px;
@@ -246,13 +266,13 @@ body {
 }
 
 .alert-danger {
-    background-color: #fdf2f8;
+    background-color: #fef2f2;
     border-color: var(--color-danger);
     color: var(--color-danger-dark);
 }
 
 .alert-success {
-    background-color: #f0fdfa;
+    background-color: #f0fdf4;
     border-color: var(--color-success);
     color: #115e59;
 }
@@ -274,7 +294,9 @@ body {
     font-size: 11px;
     color: #b91c1c;
     margin-top: 8px;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* --- DASHBOARD STYLING --- */
@@ -294,15 +316,24 @@ body {
 }
 
 .sidebar-header {
-    padding: 40px 24px;
+    padding: 30px 24px;
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sidebar-logo-svg {
+    width: 45px;
+    height: auto;
+    color: #111111;
 }
 
 .sidebar-brand-name {
     font-family: var(--font-serif);
-    font-size: 2.2rem;
-    font-weight: 300;
-    letter-spacing: 4px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
@@ -318,7 +349,7 @@ body {
 
 .menu-section-title {
     font-size: 9px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -342,20 +373,22 @@ body {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .menu-link:hover {
     color: var(--text-primary);
-    background-color: #f9f8f6;
+    background-color: #f5f5f5;
 }
 
 .menu-link.active {
     color: var(--text-primary);
-    font-weight: 600;
-    border-left: 2px solid var(--color-accent);
-    padding-left: 10px; /* Offset for border */
+    font-weight: 800;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 9px;
 }
 
 .menu-link-icon {
@@ -383,10 +416,11 @@ body {
 .user-avatar {
     width: 36px;
     height: 36px;
-    background-color: #1a1a1a;
+    background-color: #111111;
     color: #ffffff;
     font-family: var(--font-serif);
     font-size: 16px;
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -399,7 +433,7 @@ body {
 
 .user-name {
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -420,7 +454,7 @@ body {
     color: var(--text-secondary);
     padding: 10px 16px;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
@@ -454,9 +488,10 @@ body {
 
 .header-title {
     font-family: var(--font-serif);
-    font-size: 1.8rem;
-    font-weight: 300;
+    font-size: 1.6rem;
+    font-weight: 800;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .header-meta {
@@ -476,7 +511,7 @@ body {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .status-dot {
@@ -503,9 +538,10 @@ body {
 
 .welcome-title {
     font-family: var(--font-serif);
-    font-size: 2.2rem;
-    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 800;
     margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 .welcome-text {
@@ -539,7 +575,7 @@ body {
 
 .stat-title {
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -551,8 +587,9 @@ body {
 
 .stat-value {
     font-family: var(--font-serif);
-    font-size: 1.8rem;
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .stat-desc {
@@ -569,9 +606,10 @@ body {
 
 .data-section-title {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.3rem;
+    font-weight: 800;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .info-table-wrapper {
@@ -587,9 +625,9 @@ body {
 
 .info-table th {
     padding: 12px 16px;
-    border-bottom: 1px solid var(--text-primary);
+    border-bottom: 2px solid var(--text-primary);
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 1px;
@@ -607,7 +645,7 @@ body {
 
 .code-badge {
     font-family: monospace;
-    background-color: #f9f8f6;
+    background-color: #f5f5f5;
     border: 1px solid var(--border-color);
     padding: 2px 6px;
     color: var(--text-primary);
@@ -620,13 +658,18 @@ body {
     }
     
     .split-image-panel {
-        height: 250px;
+        height: 200px;
         flex: none;
     }
     
     .brand-title {
-        font-size: 3rem;
-        letter-spacing: 8px;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+    
+    .brand-logo-svg {
+        width: 60px;
+        margin-bottom: 10px;
     }
     
     .split-form-panel {
@@ -649,7 +692,7 @@ body {
     }
     
     .sidebar-header {
-        padding: 24px;
+        padding: 20px;
     }
     
     .header {

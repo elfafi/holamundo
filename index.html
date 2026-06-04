@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - AURA Studio</title>
+    <title>Iniciar Sesión - NIKE</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -13,8 +13,12 @@
             <div class="split-image-bg"></div>
             <div class="split-image-overlay"></div>
             <div class="split-image-content">
-                <h1 class="brand-title">AURA</h1>
-                <p class="brand-subtitle">Studio &amp; Collection</p>
+                <!-- Nike Swoosh SVG Logo -->
+                <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 6.5c-4.5 2.1-10 6.5-13.8 10.2-2.3 2.2-4.2 4.5-5.1 6-.8 1.3-1 2.2-.6 2.2.8 0 3.1-1.8 6.2-4.9C12.3 14.2 18.1 7.6 20.8 5.3c.3-.3.5-.5.2-.5-.1 0-.1.3-.2.3z"/>
+                </svg>
+                <h1 class="brand-title">NIKE</h1>
+                <p class="brand-subtitle">ATHLETICS DEPT.</p>
             </div>
         </div>
 
@@ -23,8 +27,14 @@
             <div class="form-wrapper">
                 <div class="login-card">
                     <div class="form-header">
-                        <h2 class="form-title">Ingreso al Portal</h2>
-                        <p class="form-subtitle">Por favor, introduce tus datos para continuar.</p>
+                        <!-- Nike Swoosh SVG Logo for Form Header -->
+                        <div class="form-logo-container">
+                            <svg class="form-logo-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 6.5c-4.5 2.1-10 6.5-13.8 10.2-2.3 2.2-4.2 4.5-5.1 6-.8 1.3-1 2.2-.6 2.2.8 0 3.1-1.8 6.2-4.9C12.3 14.2 18.1 7.6 20.8 5.3c.3-.3.5-.5.2-.5-.1 0-.1.3-.2.3z"/>
+                            </svg>
+                        </div>
+                        <h2 class="form-title">Portal de Acceso</h2>
+                        <p class="form-subtitle">Introduce tus credenciales administrativas.</p>
                     </div>
 
                     <!-- Alert Container for dynamic errors/messages -->

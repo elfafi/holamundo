@@ -21,7 +21,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Control - AURA Studio</title>
+    <title>Panel de Control - NIKE</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -29,7 +29,10 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <span class="sidebar-brand-name">AURA</span>
+                <svg class="sidebar-logo-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 6.5c-4.5 2.1-10 6.5-13.8 10.2-2.3 2.2-4.2 4.5-5.1 6-.8 1.3-1 2.2-.6 2.2.8 0 3.1-1.8 6.2-4.9C12.3 14.2 18.1 7.6 20.8 5.3c.3-.3.5-.5.2-.5-.1 0-.1.3-.2.3z"/>
+                </svg>
+                <span class="sidebar-brand-name">NIKE</span>
             </div>
 
             <div class="sidebar-content">
@@ -58,7 +61,7 @@
                         <li class="menu-item">
                             <a href="#" class="menu-link">
                                 <svg class="menu-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-                                <span>Prendas y Colecciones</span>
+                                <span>Prendas y Calzado</span>
                             </a>
                         </li>
                     </ul>
@@ -149,8 +152,8 @@
             <div class="content-body">
                 <!-- Welcome Banner -->
                 <div class="welcome-banner">
-                    <h2 class="welcome-title">Bienvenido a AURA, <%= user.substring(0,1).toUpperCase() + user.substring(1) %></h2>
-                    <p class="welcome-text">Has iniciado sesión correctamente como administrador. A través de este portal puedes supervisar los movimientos, el inventario de prendas y las ventas del sistema.</p>
+                    <h2 class="welcome-title">Bienvenido a NIKE, <%= user.substring(0,1).toUpperCase() + user.substring(1) %></h2>
+                    <p class="welcome-text">Has iniciado sesión correctamente como administrador. A través de este portal puedes supervisar los movimientos, el inventario de prendas deportivas, calzado y las ventas del sistema.</p>
                 </div>
 
                 <!-- Stats Grid -->
