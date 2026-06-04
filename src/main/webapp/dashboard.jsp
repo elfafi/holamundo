@@ -29,8 +29,8 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <svg class="sidebar-logo-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 6.5c-4.5 2.1-10 6.5-13.8 10.2-2.3 2.2-4.2 4.5-5.1 6-.8 1.3-1 2.2-.6 2.2.8 0 3.1-1.8 6.2-4.9C12.3 14.2 18.1 7.6 20.8 5.3c.3-.3.5-.5.2-.5-.1 0-.1.3-.2.3z"/>
+                <svg class="sidebar-logo-svg" viewBox="0 0 100 38" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M98 4C73 17 38 33 12 37.5 4 38.8 0 36 1 31c1-5 6-9.5 14-12.5L98 4Z"/>
                 </svg>
                 <span class="sidebar-brand-name">NIKE</span>
             </div>
