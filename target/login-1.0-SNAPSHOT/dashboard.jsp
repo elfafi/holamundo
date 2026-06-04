@@ -1,3 +1,21 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%
+    // Verificar si el usuario ha iniciado sesión
+    String user = (String) session.getAttribute("user");
+    if (user == null) {
+        session.setAttribute("error_msg", "Acceso denegado. Por favor, inicia sesión.");
+        response.sendRedirect("index.jsp");
+        return;
+    }
+
+    // Formatear tiempos de la sesión
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    String horaCreacion = sdf.format(new Date(session.getCreationTime()));
+    String horaUltimoAcceso = sdf.format(new Date(session.getLastAccessedTime()));
+    String fechaActual = sdf.format(new Date());
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -101,13 +119,15 @@
             <!-- Footer con datos del usuario e inicio de cierre de sesión -->
             <div class="sidebar-footer">
                 <div class="user-profile">
-                    <div class="user-avatar">F</div>
+                    <div class="user-avatar">
+                        <%= user.substring(0, 1).toUpperCase() %>
+                    </div>
                     <div class="user-info">
-                        <div class="user-name">fabian</div>
+                        <div class="user-name"><%= user %></div>
                         <div class="user-role">Administrador</div>
                     </div>
                 </div>
-                <a href="#" id="logoutBtn" class="btn-logout">
+                <a href="logout.jsp" class="btn-logout">
                     <span>Cerrar Sesión</span>
                 </a>
             </div>
@@ -118,7 +138,7 @@
             <header class="header">
                 <h1 class="header-title">Panel Administrativo</h1>
                 <div class="header-meta">
-                    <span id="currentDate">--/--/---- --:--:--</span>
+                    <span>Fecha: <%= fechaActual %></span>
                     <div class="status-indicator">
                         <span class="status-dot"></span>
                         <span>Sesión Activa</span>
@@ -129,7 +149,7 @@
             <div class="content-body">
                 <!-- Welcome Banner -->
                 <div class="welcome-banner">
-                    <h2 class="welcome-title">Bienvenido a AURA, Fabian</h2>
+                    <h2 class="welcome-title">Bienvenido a AURA, <%= user.substring(0,1).toUpperCase() + user.substring(1) %></h2>
                     <p class="welcome-text">Has iniciado sesión correctamente como administrador. A través de este portal puedes supervisar los movimientos, el inventario de prendas y las ventas del sistema.</p>
                 </div>
 
@@ -139,16 +159,16 @@
                         <div class="stat-header">
                             <span class="stat-title">Estado del Host</span>
                         </div>
-                        <span class="stat-value">Estático</span>
-                        <span class="stat-desc">Alojado en GitHub Pages</span>
+                        <span class="stat-value">Tomcat</span>
+                        <span class="stat-desc">Contenedor de Servlets Activo</span>
                     </div>
 
                     <div class="stat-card">
                         <div class="stat-header">
                             <span class="stat-title">Tipo de Sesión</span>
                         </div>
-                        <span class="stat-value">Cliente</span>
-                        <span class="stat-desc">Persistencia vía SessionStorage</span>
+                        <span class="stat-value">Servidor</span>
+                        <span class="stat-desc">Persistencia vía HttpSession de Java</span>
                     </div>
 
                     <div class="stat-card">
@@ -174,23 +194,27 @@
                             <tbody>
                                 <tr>
                                     <td><strong>Usuario Autenticado</strong></td>
-                                    <td><span class="code-badge">fabian</span></td>
+                                    <td><span class="code-badge"><%= user %></span></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>ID de Sesión (Simulado)</strong></td>
-                                    <td><span class="code-badge" id="sessionId">--------------------------------</span></td>
+                                    <td><strong>ID de Sesión (HTTP Session ID)</strong></td>
+                                    <td><span class="code-badge"><%= session.getId() %></span></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Hora de Creación</strong></td>
-                                    <td id="creationTime">--:--:-- --/--/----</td>
+                                    <td><%= horaCreacion %></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Entorno de Servidor</strong></td>
-                                    <td>GitHub Pages Static Host</td>
+                                    <td><strong>Último Acceso</strong></td>
+                                    <td><%= horaUltimoAcceso %></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Tecnología del Portal</strong></td>
-                                    <td>HTML5 / Vanilla CSS / ES6 JavaScript</td>
+                                    <td><strong>Servidor de Despliegue</strong></td>
+                                    <td><%= application.getServerInfo() %></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Versión de Servlet API</strong></td>
+                                    <td><%= application.getMajorVersion() %>.<%= application.getMinorVersion() %></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -199,8 +223,5 @@
             </div>
         </main>
     </div>
-
-    <!-- Client-Side Session Control Script -->
-    <script src="js/login.js"></script>
 </body>
 </html>
